@@ -1,2 +1,8 @@
 /venv
 settings.ini
+core/media
+core/core/migrations/
+core/core/__pycache__/
+core/card/migrations/
+core/card/__pycache__/
+core/card/submodels/__pycache__/
