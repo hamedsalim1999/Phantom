@@ -6,3 +6,5 @@ core/core/__pycache__/
 core/card/migrations/
 core/card/__pycache__/
 core/card/submodels/__pycache__/
+env
+
