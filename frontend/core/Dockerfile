@@ -19,4 +19,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 8080
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "core.wsgi"]
+
