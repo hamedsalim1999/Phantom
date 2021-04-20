@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: djangodeploy
+        image: hamedsalim1999/djangodeploy
+        envFrom:
+        - secretRef:
+            name: django-secrets
         ports:
         - containerPort: 8000
 ---
