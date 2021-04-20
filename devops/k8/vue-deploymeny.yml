@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: vue-app
-        image: vuedeploy
+        image: hamedsalim1999/vuedeploy
         ports:
         - containerPort: 8080
 ---
