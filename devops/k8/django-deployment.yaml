@@ -20,6 +20,9 @@ spec:
             name: django-secrets
         ports:
         - containerPort: 8000
+        volumeMounts:
+        - mountPath: "/media/upload"
+          name: pvDjango
 ---
 kind: Service
 apiVersion: v1
@@ -33,3 +36,14 @@ spec:
     port: 8000
     targetPort: 8000
   type: NodePort
+---
+kind: PersistentVolume
+metadata:
+  name: pvDjango
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /data/pvDjango/
