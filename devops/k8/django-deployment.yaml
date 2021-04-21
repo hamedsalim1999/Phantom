@@ -43,7 +43,12 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
   capacity:
     storage: 5Gi
   hostPath:
     path: /data/pvDjango/
+  # volumeMode: Filesystem
+  # nfs:
+  #   path: /data/pvDjango/
+  #   server: 5.253.25.50
