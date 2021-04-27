@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-openresty-deployment
+  labels:
+    app: nginx-openresty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-openresty
+  template:
+    metadata:
+      labels:
+        app: nginx-openresty
+    spec:
+      containers:
+      - name: nginx-openresty
+        image: hamedsalim1999/openrestyfilter
+        ports:
+        - containerPort: 80
+---
+kind: Service
+metadata:
+  name: nginx-openresty-service  
+  labels:
+    app: nginx-openresty
+spec:
+  ports:
+  - nodePort: 30500
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-openresty
+  type: NodePort
