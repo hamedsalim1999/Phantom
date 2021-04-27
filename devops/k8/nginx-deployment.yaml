@@ -21,16 +21,17 @@ spec:
         - containerPort: 80
 ---
 kind: Service
+apiVersion: v1
 metadata:
   name: nginx-openresty-service  
-  labels:
-    app: nginx-openresty
 spec:
   ports:
-  - nodePort: 30500
+  - protocol: TCP
     port: 80
-    protocol: TCP
     targetPort: 80
+  type: NodePort
   selector:
     app: nginx-openresty
-  type: NodePort
+
+
+
